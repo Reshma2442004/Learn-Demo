@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Barter Platform</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to external JavaScript file -->
+    <script src="app.js" defer></script>
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar with sticky positioning -->
+    <nav class="navbar sticky">
+        <div class="logo">SkillBarter</div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="find-skills.html">Find Skills</a></li>
+            <li><a href="post-skill.html">Post Skill</a></li>
+            <li><a href="message.html">Messages</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with background image -->
+    <section class="hero" style="background: url('hero-bg.jpg') center/cover no-repeat;">
+        <h1>Exchange Skills, Learn & Grow</h1>
+        <p>Find someone to teach you a skill while you offer yours in return!</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+
+    <section class="skill-listings">
+        <h2>Available Skills</h2>
+        <div class="skills-grid">
+            <!-- Individual skill cards -->
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Offered by: Alex Smith</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+            <div class="skill-card">
+                <h3>Graphic Design</h3>
+                <p>Offered by: Sarah Johnson</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+            <div class="skill-card">
+                <h3>Digital Marketing</h3>
+                <p>Offered by: Mike Davis</p>
+                <button class="connect-btn">Connect</button> <!-- Added button -->
+            </div>
+            <div class="skill-card">
+                <h3>Photography</h3>
+                <p>Offered by: Emily Clark</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+        </div>
+    </section>
+    <!-- End of Skill Listings showcasing available skills -->
+
+    
+    <!-- Form for users to post their skills -->
+    <section class="post-skill">
+        <h2>Post a Skill</h2>
+        <form id="skillForm">
+            <!-- Input fields for skill name and user details -->
+            <input type="text" id="skillName" placeholder="Skill Name" required>
+            <input type="text" id="yourName" placeholder="Your Name" required>
+            <textarea id="description" placeholder="Describe your skill..." required></textarea>
+            <button type="submit" class="submit-btn">Post Skill</button>
+            <!-- Feedback message for form validation -->
+            <div id="formFeedback" style="color:red; display:none;">Please fill out all fields correctly.</div>
+        </form>
+    </section>
+
+    <!-- Footer with social media links -->
+    <footer>
+        <p>&copy; 2025 SkillBarter. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" class="social-icon">🌐 Website</a>
+            <a href="#" class="social-icon">📘 Facebook</a>
+            <a href="#" class="social-icon">🐦 Twitter</a>
+            <a href="#" class="social-icon">📷 Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function showQuestions() {
+            const questionBox = document.getElementById('questionBox');
+            questionBox.style.display = 'block';
+        }
+
+        function handleSelection(option) {
+            if(option === 'post') window.location.href = 'post-skill.html';
+            else if(option === 'find') window.location.href = 'find-skills.html';
+            else window.location.href = 'Home.html';
+        }
+    </script>
+    <style>
+        #questionBox {
+            display: none;
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-btn {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .question-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <button onclick="showQuestions()" class="question-btn">Get Started</button>
+    <div id="questionBox">
+        <p>What would you like to do?</p>
+        <button onclick="handleSelection('post')" class="question-btn">Post a Skill</button>
+        <button onclick="handleSelection('find')" class="question-btn">Find a Skill</button>
+        <button onclick="handleSelection('explore')" class="question-btn">Explore Website</button>
+    </div>
+    </body>
+    
+</html>
+
+
+
